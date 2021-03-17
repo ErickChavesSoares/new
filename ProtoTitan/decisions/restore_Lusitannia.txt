@@ -1,0 +1,62 @@
+political_decisions = {
+	restore_Lusitannia = {
+		potential = {
+			tag = BRZ
+			NOT = {
+				exists = LUS
+			}
+		}	
+		allow = {
+			war = no
+		}
+		effect = {
+			prestige = 15
+			change_tag = LUS	
+			add_accepted_culture = portuguese
+			any_country = {
+				limit = {
+					tag = POR
+				}
+				country_event = { id=11101 days=0 }
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+	fatherland_volunteers = {
+		potential = {
+			OR = {
+				tag = BRZ
+				tag = LUS
+			}
+			government = hms_government
+			NOT = {
+				has_country_flag = pedro_said_it_best
+			}
+		}
+		allow = {
+			war = yes
+		}
+		effect = {
+			war_exhaustion = -5
+			prestige = 10
+			any_pop = {
+				dominant_issue = {
+					factor = 0.25
+					value = pro_military
+				}
+			}
+			set_country_flag = pedro_said_it_best
+		}
+	}
+	fountain_of_youth = {
+		alert = no
+		potential = {ai = no}
+		allow = { }
+		effect = {
+			any_pop = {
+				reduce_pop = 0.5
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+}

@@ -1,0 +1,5 @@
+owner = KAS
+controller = KAS
+add_core = KAS
+trade_goods = tea
+life_rating = 35
